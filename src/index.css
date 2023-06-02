@@ -161,6 +161,48 @@ code {
   margin-top: 30px;
 }
 
+.marginT_5{
+  margin-top: 5rem;
+}
+
+.contactCard{
+  padding: 30px;
+  background: rgb(33, 36, 37);
+  border-radius: 0.75rem;
+  gap: 1rem;
+  transition: all .3s ease-in-out;
+}
+.contactCard:hover{
+  transform: translate(0, -5px);
+}
+.contactIcon{
+  max-width: 100%;
+  background-size: cover;
+  height: max-content;
+}
+
+.contactHead{
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contactContainer{
+  column-gap: 5rem;
+}
+
+.rightPanel{
+  width: 70%;
+}
+
+.contactData{
+  --tw-text-opacity: 1;
+  color: rgb(166 166 166/var(--tw-text-opacity));
+  font-size: 1.125rem;
+}
+.details > a{
+  text-decoration: none;
+}
+
 .resumeSection {
   transition: opacity 1s ease-in-out;
   opacity: 0;
