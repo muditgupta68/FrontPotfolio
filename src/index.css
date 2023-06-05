@@ -161,45 +161,45 @@ code {
   margin-top: 30px;
 }
 
-.marginT_5{
+.marginT_5 {
   margin-top: 5rem;
 }
 
-.contactCard{
+.contactCard {
   padding: 30px;
   background: rgb(33, 36, 37);
   border-radius: 0.75rem;
   gap: 1rem;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.contactCard:hover{
+.contactCard:hover {
   transform: translate(0, -5px);
 }
-.contactIcon{
+.contactIcon {
   max-width: 100%;
   background-size: cover;
   height: max-content;
 }
 
-.contactHead{
+.contactHead {
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.contactContainer{
+.contactContainer {
   column-gap: 5rem;
 }
 
-.rightPanel{
+.rightPanel {
   width: 70%;
 }
 
-.contactData{
+.contactData {
   --tw-text-opacity: 1;
-  color: rgb(166 166 166/var(--tw-text-opacity));
+  color: rgb(166 166 166 / var(--tw-text-opacity));
   font-size: 1.125rem;
 }
-.details > a{
+.details > a {
   text-decoration: none;
 }
 
@@ -213,6 +213,51 @@ code {
   opacity: 1;
   height: auto;
   margin-top: 5rem;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+}
+
+:where(.css-dev-only-do-not-override-k7429z).ant-pagination .ant-pagination-item-active{
+  background-color: transparent;
+  border-color: white;
+  color: #ffff;
+}
+.ant-pagination-item-link{
+  color: #ffff !important;
+}
+
+.filter{
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ant-select-selector{
+  padding: 10px 0 !important;
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: #ffff;
+  font-weight: bold;
+  padding: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-top: 2rem;
+  border-radius: 15px;
+}
+
+.ribbonFont{
+  color: #111111;
+  font-weight: bold;
 }
 
 @media (max-width: 1000px) {
@@ -246,6 +291,14 @@ code {
     height: 100%;
     margin-bottom: 40px;
   }
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .filter{
+    width: 100% !important;
+    font-size: 12px;
+  }
   .grid {
     display: block !important;
   }
@@ -254,13 +307,17 @@ code {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .templateBox {
     padding: 2rem;
   }
   .data_val {
     font-size: 13px;
     font-weight: normal;
+  }
+  .parent {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 }
 @media (max-width: 400px) {

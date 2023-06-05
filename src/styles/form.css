@@ -109,8 +109,7 @@ textarea {
 button,
 .submit-btn {
   background: transparent;
-  border: 1px solid #ec1c24;
-  color: #ec1c24;
+  color: #ffff;
   border-radius: 15px;
   padding: 5px 20px;
   text-transform: uppercase;
