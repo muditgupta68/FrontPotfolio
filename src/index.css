@@ -41,6 +41,16 @@ code {
   padding: 2.5rem;
 }
 
+.responsiveImage{
+  background-size: cover;
+  width: 70%;
+  height: auto;
+}
+.center{
+  display: block;
+  margin: auto;
+}
+
 .basicTemplate {
   padding: 50px 25px;
   font-size: 18px;
@@ -222,26 +232,27 @@ code {
   grid-column-gap: 15px;
 }
 
-:where(.css-dev-only-do-not-override-k7429z).ant-pagination .ant-pagination-item-active{
+:where(.css-dev-only-do-not-override-k7429z).ant-pagination
+  .ant-pagination-item-active {
   background-color: transparent;
   border-color: white;
   color: #ffff;
 }
-.ant-pagination-item-link{
+.ant-pagination-item-link {
   color: #ffff !important;
 }
 
-.filter{
+.filter {
   color: black;
   font-weight: bold;
   font-size: 14px;
 }
 
-.ant-select-selector{
+.ant-select-selector {
   padding: 10px 0 !important;
 }
 
-.pagination{
+.pagination {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -255,7 +266,7 @@ code {
   border-radius: 15px;
 }
 
-.ribbonFont{
+.ribbonFont {
   color: #111111;
   font-weight: bold;
 }
@@ -295,7 +306,7 @@ code {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
-  .filter{
+  .filter {
     width: 100% !important;
     font-size: 12px;
   }
@@ -327,4 +338,120 @@ code {
   .background {
     padding: 0;
   }
+}
+/* LOADING */
+
+.loadingContainer {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 175px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/**
+  * Load man - gaming inspired loader
+  *
+  * @author jh3y - jheytompkins.com
+*/
+.load-man {
+  -webkit-animation: load-man-travel 1.2s infinite linear;
+  animation: load-man-travel 1.2s infinite linear;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--secondary),
+    var(--secondary) 5%,
+    transparent 5%,
+    transparent 35%
+  );
+  height: 10px;
+  left: 50%;
+  margin-top: -5px;
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  /**
+    * Our pseudo elements create the head pieces
+    *
+    * They are near identical minus subtle differences in animation and border
+    * styling
+  */
+  /**
+  * The top head piece
+  */
+  /**
+  * The bottom head piece
+  */
+}
+.load-man:after,
+.load-man:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  border: 25px solid var(--primary);
+  border-radius: 100%;
+  margin-top: -25px;
+}
+.load-man:before {
+  --close: -90;
+  -webkit-animation: load-man-chomp 0.35s infinite linear;
+  animation: load-man-chomp 0.35s infinite linear;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.load-man:after {
+  --close: 0;
+  -webkit-animation: load-man-chomp 0.35s infinite linear;
+  animation: load-man-chomp 0.35s infinite linear;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+@-webkit-keyframes load-man-travel {
+  to {
+    background-position: -200px 0;
+  }
+}
+
+@keyframes load-man-travel {
+  to {
+    background-position: -200px 0;
+  }
+}
+
+@-webkit-keyframes load-man-chomp {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--close) * 1deg));
+    transform: rotate(calc(var(--close) * 1deg));
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes load-man-chomp {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--close) * 1deg));
+    transform: rotate(calc(var(--close) * 1deg));
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.marginTop24{
+  margin-top: 24rem;
 }

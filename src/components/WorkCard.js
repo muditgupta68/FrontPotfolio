@@ -4,7 +4,14 @@ import ModalComp from "./ModalComp";
 
 const { Meta } = Card;
 
-const WorkCard = ({ img, heading, tag, link, title, description }) => {
+const WorkCard = ({
+  img,
+  heading,
+  tag,
+  link,
+  title,
+  description,
+}) => {
   const [buttonLoad, setBtnLoad] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -20,6 +27,8 @@ const WorkCard = ({ img, heading, tag, link, title, description }) => {
   const handleCancel = () => {
     setOpen(false);
   };
+
+  heading = heading.length > 100 ? heading.substring(0, 100) + "....." : heading;
 
   return (
     <div className="workCard">

@@ -4,17 +4,17 @@ import "../styles/componentStyle.css";
 const GreetCard = () => {
   return (
     <div className="greetCard">
-      <div class="business2">
-        <div class="front">
-          <div class="red">
-            <div class="head">
+      <div className="business2">
+        <div className="front">
+          <div className="red">
+            <div className="head">
               {/* <div>
                 <h2>Business Analyst</h2>
               </div> */}
             </div>
           </div>
-          <div class="avatar">
-            <div class="img">
+          <div className="avatar">
+            <div className="img">
               <img
                 src="https://raw.githubusercontent.com/MohcineDev/Business-Card/main/imgs/man.png"
                 alt=""
@@ -23,7 +23,7 @@ const GreetCard = () => {
             <p>Mudit Gupta</p>
             <p>Analyst</p>
           </div>
-          <div class="infos">
+          <div className="infos">
             <div>
               <div>
                 <p className="text-center">+01234567890123</p>

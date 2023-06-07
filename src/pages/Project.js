@@ -18,11 +18,17 @@ const Project = () => {
   };
 
   const fetchProjectData = async () => {
+   
     const projectData = await axios.get(
       `https://odd-bass-yoke.cyclic.app/api/v1/project?page=${currPage}&search=${search}`
     );
     const dataApi = projectData?.data?.projects;
-    const totalData = Number(6 * projectData?.data?.totalPages);
+
+    if(search){
+      setPage(1);
+    }
+    
+    const totalData = Number(projectData?.data?.totalValues);
     setTotal(totalData);
     setProjects(dataApi);
 
@@ -31,7 +37,7 @@ const Project = () => {
 
   const fetchApiForTags = async () => {
     const apiCall = await axios.get(
-      `https://odd-bass-yoke.cyclic.app/api/v1/project?page=${currPage}`
+      `https://odd-bass-yoke.cyclic.app/api/v1/project`
     );
     const dataApi = apiCall?.data?.projects;
 
@@ -56,7 +62,7 @@ const Project = () => {
 
   useEffect(() => {
     fetchApiForTags();
-  }, [currPage]);
+  }, []);
 
   const handleChangeValue = (value) => {
     let formatVal = value.join("%");

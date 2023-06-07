@@ -57,7 +57,7 @@ const Navbar = () => {
               <li className="nav-item m-2">
                 <NavLink
                   exact="true"
-                  to="/"
+                  to="/blog"
                   className="underline_rem"
                   activeclassname="active"
                 >
