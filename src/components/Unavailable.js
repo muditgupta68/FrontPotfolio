@@ -1,11 +1,11 @@
 import React from 'react'
-import dataError from "../images/error.jpg"
+import dataError1 from "../images/errorIcon.png"
 
-const Unavailable = () => {
+const Unavailable = ({msg}) => {
   return (
-    <div>
-        <h1 className='mt-5 d-flex justify-content-center'>Sorry, Server is Down Currently!!</h1>
-        <img className='responsiveImage center mt-3' src={dataError} alt="error" />
+    <div className='error_container'>
+        <img className='center' src={dataError1} alt="error" />
+        <h1 className='mt-3 d-flex justify-content-center errorText'>{msg}</h1>
     </div>
   )
 }

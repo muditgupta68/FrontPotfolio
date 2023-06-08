@@ -41,12 +41,24 @@ code {
   padding: 2.5rem;
 }
 
-.responsiveImage{
+.errorText {
+  font-size: 16px;
+  color: #cacacab3;
+  font-weight: initial;
+  text-transform: capitalize;
+}
+
+.error_container{
+  margin-top: 8rem !important;
+  margin-bottom: 4rem !important;
+}
+
+.responsiveImage {
   background-size: cover;
   width: 70%;
   height: auto;
 }
-.center{
+.center {
   display: block;
   margin: auto;
 }
@@ -452,6 +464,6 @@ code {
   }
 }
 
-.marginTop24{
+.marginTop24 {
   margin-top: 24rem;
 }
