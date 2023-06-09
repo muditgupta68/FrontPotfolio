@@ -19,12 +19,14 @@ const ModalComp = ({
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-          <Button key="back" onClick={handleCancel}>
+          <Button className="return" key="back" onClick={handleCancel}>
             Return
           </Button>,
           <Button
             key="link"
+            className="goTo"
             href={url}
+            target="_blank"
             type="primary"
             loading={buttonLoad}
             onClick={handleOk}
@@ -33,8 +35,8 @@ const ModalComp = ({
           </Button>,
         ]}
       >
-        <h1 className="mt-4">{title}</h1>
-        <p className="mt-3">{description}</p>
+        <h2 className="mt-4">{title}</h2>
+        <p className="mt-4">{description}</p>
       </Modal>
     </>
   );

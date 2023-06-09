@@ -180,11 +180,11 @@ li.nav-item:hover {
   font-family: "roboto";
 }
 
-.workCard{
+.workCard {
   transition: all 0.2s ease-in-out;
 }
 
-.workCard:hover{
+.workCard:hover {
   transform: scale(1.05);
 }
 
@@ -374,6 +374,18 @@ li.nav-item:hover {
   border-radius: 50%;
   border-color: #ffff !important;
 }
+
+:where(.css-k7429z).ant-ribbon .ant-ribbon-text {
+  color: #393939 !important;
+  background: #d8ae61 !important;
+  font-weight: bold !important;
+}
+:where(.css-dev-only-do-not-override-k7429z).ant-ribbon .ant-ribbon-text {
+  color: #393939 !important;
+  background: #d8ae61 !important;
+  font-weight: bold !important;
+}
+
 :where(.css-k7429z).ant-pagination .ant-pagination-item-active {
   background-color: #111111 !important;
   color: #ffff !important;
@@ -388,8 +400,9 @@ li.nav-item:hover {
 }
 
 .ant-select-selector {
-  padding: 10px 0 !important;
+  padding: 10px 3px !important;
 }
+
 
 .pagination {
   width: 100%;
@@ -405,9 +418,37 @@ li.nav-item:hover {
   border-radius: 15px;
 }
 
+.return {
+  color: #393939 !important;
+  font-weight: bold;
+  border: none;
+  transition: all .2s ease;
+}
+
+.goTo {
+  font-weight: bold;
+  background-color: rgb(5, 95, 5);
+  border: none;
+  transition: all .2s ease;
+}
+
+.return:hover {
+  background-color: #fd7590 !important;
+  border:none;
+  translate: 0 -3px;
+}
+
+.goTo:hover {
+  font-weight: bold;
+  border: none;
+  translate: 0 -3px;
+  background-color: rgb(9, 142, 9) !important;
+}
+
 .ribbonFont {
   color: #111111;
   font-weight: bold;
+  background-color: #d8ae61 !important;
 }
 
 @media (max-width: 1000px) {
@@ -500,8 +541,8 @@ li.nav-item:hover {
   animation: load-man-travel 1.2s infinite linear;
   background: repeating-linear-gradient(
     90deg,
-    var(--secondary),
-    var(--secondary) 5%,
+    rgba(158, 125, 63, 1),
+    rgba(158, 125, 63, 1) 5%,
     transparent 5%,
     transparent 35%
   );
@@ -530,7 +571,7 @@ li.nav-item:hover {
   position: absolute;
   left: -25px;
   top: 50%;
-  border: 25px solid var(--primary);
+  border: 25px solid rgb(216, 174, 97);
   border-radius: 100%;
   margin-top: -25px;
 }
@@ -591,6 +632,17 @@ li.nav-item:hover {
   }
 }
 
+.cardBtn {
+  color: #765c2a !important;
+  background-color: #d8ae61;
+  font-weight: bolder;
+}
+.cardBtn:hover {
+  background-color: #d8ae61 !important;
+  color: #ffff !important;
+  font-weight: bolder;
+}
+
 .marginTop24 {
-  margin-top: 24rem;
+  margin-top: 45rem;
 }

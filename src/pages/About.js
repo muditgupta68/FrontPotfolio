@@ -1,10 +1,16 @@
 import { React, useState, useEffect } from "react";
 import profileImg from "../images/about_profile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDays,
+  faMobileScreenButton,
+  faMapLocationDot,
+  faEnvelopeOpenText,
+} from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import PerInfoCard from "../components/PerInfoCard";
 import AboutResume from "../components/aboutResume/AboutResume";
+import axios from "axios";
 import Loading from "./Loading";
 
 const About = () => {
@@ -23,6 +29,42 @@ const About = () => {
     const id = setInterval(timer, 1000);
     return () => clearInterval(id);
   }, [currentCount]);
+
+  const [isError, setError] = useState(false);
+  const [education, setEducation] = useState([]);
+  const [award, setAward] = useState([]);
+  const [cert, setCert] = useState([]);
+
+  const fetchResumeApi = async () => {
+    try {
+      const apiCall = await axios.get(
+        `https://odd-bass-yoke.cyclic.app/api/v1/about`
+      );
+      const data = apiCall?.data;
+
+      const education = data.filter((ed) => {
+        return ed.tag === "Education";
+      });
+
+      setEducation(education);
+
+      const award = data.filter((ed) => {
+        return ed.tag === "Award";
+      });
+      setAward(award);
+
+      const cert = data.filter((ed) => {
+        return ed.tag === "Certification";
+      });
+      setCert(cert);
+    } catch (error) {
+      setError(true);
+    }
+  };
+
+  useEffect(() => {
+    fetchResumeApi();
+  }, []);
 
   const handleResumeVisibility = () => {
     setResume(!showResume);
@@ -50,15 +92,18 @@ const About = () => {
               <h3 className="main">Who am i?</h3>
               <div className="description">
                 <p className="para">
-                  I'm Creative Director and UI/UX Designer from Sydney,
-                  Australia, working in web development and print media. I enjoy
-                  turning complex problems into simple, beautiful and intuitive
-                  designs.
+                  I am a highly skilled Data Analyst and Business Analyst with a
+                  passion for extracting meaningful insights from complex data
+                  sets to drive strategic decision-making. With a strong
+                  background in data analysis, statistics, and business acumen,
+                  I excel at transforming raw data into actionable intelligence
+                  that guides business growth.
                   <br></br>
                   <br></br>
-                  My aim is to bring across your message and identity in the
-                  most creative way. I created web design for many famous brand
-                  companies.
+                  Let's connect to
+                  discuss how my analytical expertise can contribute to your
+                  organization's success and help drive data-driven
+                  decision-making.
                   <br></br>
                   <br></br>
                 </p>
@@ -66,24 +111,28 @@ const About = () => {
               <h3>Personal Info</h3>
               <div className="p_info">
                 <PerInfoCard
-                  icon={faCoffee}
+                  color="red"
+                  icon={faMobileScreenButton}
                   infoHead={"Phone"}
                   data="+91-9654238322"
                 />
                 <PerInfoCard
-                  icon={faCoffee}
-                  infoHead={"Phone"}
-                  data="+91-9654238322"
+                  color="pink"
+                  icon={faMapLocationDot}
+                  infoHead={"Location"}
+                  data="India"
                 />
                 <PerInfoCard
-                  icon={faCoffee}
-                  infoHead={"Phone"}
-                  data="+91-9654238322"
+                  color="blue"
+                  icon={faEnvelopeOpenText}
+                  infoHead={"Email"}
+                  data="muditgupta68@gmail.com"
                 />
                 <PerInfoCard
-                  icon={faCoffee}
-                  infoHead={"Phone"}
-                  data="+91-9654238322"
+                  color="purple"
+                  icon={faCalendarDays}
+                  infoHead={"Birthday"}
+                  data="Oct 06,2000"
                 />
               </div>
             </div>
@@ -113,7 +162,12 @@ const About = () => {
         )}
 
         <div className={`resumeSection ${showResume && "activeDiv"}`}>
-          <AboutResume />
+          <AboutResume
+            education={education}
+            award={award}
+            cert={cert}
+            isError={isError}
+          />
         </div>
       </div>
     </div>

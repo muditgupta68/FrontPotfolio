@@ -22,6 +22,7 @@ const WorkCard = ({
     setBtnLoad(true);
     setTimeout(() => {
       setOpen(false);
+      setBtnLoad(false);
     }, 3000);
   };
   const handleCancel = () => {
@@ -32,16 +33,17 @@ const WorkCard = ({
 
   return (
     <div className="workCard">
-      <Badge.Ribbon text={tag} color="yellow" className="ribbonFont">
+      <Badge.Ribbon text={tag} color="#d8ae61s" className="ribbonFont">
         <Card
-          style={{ width: "100%", margin: "50px 0px" }}
+          style={{ width: "100%", margin: "50px 0px",background: 'rgb(255 244 222)' }}
           cover={<img alt="work image" src={img} />}
         >
           <Meta title={title} description={heading} />
           <Button
             type="primary"
             onClick={showModal}
-            style={{ width: "100%", marginTop: "20px" }}
+            className="cardBtn"
+            style={{ width: "100%", marginTop: "20px"}}
           >
             View for more
           </Button>

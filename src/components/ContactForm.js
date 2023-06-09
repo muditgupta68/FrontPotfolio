@@ -79,8 +79,8 @@ const ContactForm = () => {
   return (
     <div className="contain p-4">
       <div className="form">
-        <h4>I'm always open to discuss</h4>
-        <h2 className="form-headline pb-3">Send me a message</h2>
+        <h4 className="mt-3">Let's Connect!</h4>
+        <h2 className="form-headline pb-3">I'm open to connecting and exchanging ideas.</h2>
         <form
           id="submit-form"
           action="https://formspree.io/f/mjvdqzlq"

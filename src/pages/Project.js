@@ -128,10 +128,9 @@ const Project = () => {
           </Select>
           <div className="">
             <Button
-              type="primary"
               shape="rounded"
               icon={<SearchOutlined />}
-              className="ml-3 mt-2"
+              className="ml-3 mt-2 goTo"
               style={{ padding: "0px 27px 10px 10px", fontSize: "14px" }}
               onClick={submitButton}
             />
