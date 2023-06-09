@@ -12,7 +12,95 @@ code {
     monospace;
 }
 .active {
-  color: red;
+  color: #111111 !important;
+  font-weight: bold;
+  translate: 0 -5px;
+}
+li.nav-item {
+  padding: 1px 40px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  background: rgb(216, 174, 97);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d8ae61",endColorstr="#9e7d3f",GradientType=1);
+  /* background: rgb(205, 145, 0);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  ); */
+}
+
+.btn_gradient {
+  background: rgb(205, 145, 0);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(205, 145, 0, 1) 0%,
+    rgba(216, 174, 97, 1) 100%,
+    rgba(32, 36, 0, 0.2839986336331407) 100%,
+    rgba(216, 174, 97, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cd9100",endColorstr="#d8ae61",GradientType=1);
+}
+
+nav.navbar.navBar.navbar-expand-lg.navbar-dark.bg-dark.justify-content-between.p-4.pt-3 {
+  background: transparent !important;
+}
+
+li.nav-item:hover {
+  translate: 0 -5px;
+  font-weight: bolder;
+}
+
+.underline_rem:hover,
+.underline_rem {
+  color: white;
+  text-decoration: none !important;
 }
 .underline_rem {
   text-decoration: none;
@@ -24,6 +112,14 @@ code {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-family: "Great Vibes", cursive;
+}
+
+.rotate_20 {
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  font-size: 25px !important;
 }
 .nav_right {
   align-items: center;
@@ -39,6 +135,8 @@ code {
   background-position: center;
   color: aliceblue;
   padding: 2.5rem;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .errorText {
@@ -48,7 +146,7 @@ code {
   text-transform: capitalize;
 }
 
-.error_container{
+.error_container {
   margin-top: 8rem !important;
   margin-bottom: 4rem !important;
 }
@@ -81,11 +179,36 @@ code {
   margin-bottom: 30px;
   font-family: "roboto";
 }
+
+.workCard{
+  transition: all 0.2s ease-in-out;
+}
+
+.workCard:hover{
+  transform: scale(1.05);
+}
+
 .heading::after {
   content: "";
-  height: 7px;
+  height: 3px;
   position: absolute;
-  background-color: yellow;
+  background: rgb(216, 174, 97);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(216, 174, 97, 1) 0%,
+    rgba(158, 125, 63, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d8ae61",endColorstr="#9e7d3f",GradientType=1);
   color: red;
   font-weight: bold;
   width: 140px;
@@ -246,12 +369,16 @@ code {
 
 :where(.css-dev-only-do-not-override-k7429z).ant-pagination
   .ant-pagination-item-active {
-  background-color: transparent;
-  border-color: white;
+  background-color: #111111 !important;
   color: #ffff;
+  border-radius: 50%;
+  border-color: #ffff !important;
 }
-.ant-pagination-item-link {
+:where(.css-k7429z).ant-pagination .ant-pagination-item-active {
+  background-color: #111111 !important;
   color: #ffff !important;
+  border-radius: 50%;
+  border-color: #ffff !important;
 }
 
 .filter {

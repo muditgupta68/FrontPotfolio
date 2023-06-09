@@ -109,14 +109,12 @@ textarea {
 button,
 .submit-btn {
   background: transparent;
-  color: #ffff;
+  color: #ffff !important;
   border-radius: 15px;
   padding: 5px 20px;
   text-transform: uppercase;
 }
-button:hover,
 .submit-btn:hover,
-button:focus,
 .submit-btn:focus {
   background: #ec1c24;
   outline: 0;

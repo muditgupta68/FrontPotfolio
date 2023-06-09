@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { HomeOutlined,UserOutlined,ExperimentOutlined,ContactsOutlined,GlobalOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between p-4 pt-3">
+      <nav className="navbar navBar navbar-expand-lg navbar-dark bg-dark justify-content-between p-4 pt-3">
         <div className="nav_left">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand rotate_20" href="/">
             Mudit Gupta
           </a>
           <button
@@ -24,56 +25,61 @@ const Navbar = () => {
         <div className="nav_right">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto text-center">
-              <li className="nav-item m-2">
-                <NavLink
-                  exact="true"
-                  to="/"
-                  className="underline_rem"
-                  activeclassname="active"
-                >
-                  <p className="mt-2 inherit">Home</p>
-                </NavLink>
-              </li>
-              <li className="nav-item m-2">
-                <NavLink
-                  exact="true"
-                  to="/about"
-                  className="underline_rem"
-                  activeclassname="active"
-                >
-                  <p className="mt-2 inherit">About</p>
-                </NavLink>
-              </li>
-              <li className="nav-item m-2">
-                <NavLink
-                  exact="true"
-                  to="/project"
-                  className="underline_rem"
-                  activeclassname="active"
-                >
-                  <p className="mt-2 inherit">Project</p>
-                </NavLink>
-              </li>
-              <li className="nav-item m-2">
-                <NavLink
-                  exact="true"
-                  to="/blog"
-                  className="underline_rem"
-                  activeclassname="active"
-                >
-                  <p className="mt-2 inherit">Blogs</p>
-                </NavLink>
-              </li>
-              <li className="nav-item m-2">
-                <NavLink
-                  exact="true"  
-                  to="/contact"
-                  className="underline_rem"
-                  activeclassname="active"
-                >
-                  <p className="mt-2 inherit">Contact</p>
-                </NavLink>
-              </li>
+              <NavLink
+                exact="true"
+                to="/"
+                className="underline_rem"
+                activeclassname="active"
+              >
+                <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
+                  <HomeOutlined />
+                  <p className="mt-3 inherit">Home</p>
+                </li>
+              </NavLink>
+              <NavLink
+                exact="true"
+                to="/about"
+                className="underline_rem"
+                activeclassname="active"
+              >
+                <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
+                <UserOutlined />
+                  <p className="mt-3 inherit">About</p>
+                </li>
+              </NavLink>
+              <NavLink
+                exact="true"
+                to="/project"
+                className="underline_rem"
+                activeclassname="active"
+              >
+                <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
+                <ExperimentOutlined />
+                  <p className="mt-3 inherit">Project</p>
+                </li>
+              </NavLink>
+              <NavLink
+                exact="true"
+                to="/blog"
+                className="underline_rem"
+                activeclassname="active"
+              >
+                <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
+                <GlobalOutlined />
+                  <p className="mt-3 inherit">Blogs</p>
+                </li>
+              </NavLink>
+              <NavLink
+                exact="true"
+                to="/contact"
+                className="underline_rem"
+                activeclassname="active"
+              >
+                <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
+                <ContactsOutlined />
+                  <p className="mt-3 inherit">Contact</p>
+                </li>
+              </NavLink>
             </ul>
           </div>
         </div>

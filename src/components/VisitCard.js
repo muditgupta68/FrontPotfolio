@@ -14,9 +14,9 @@ const VisitCard = () => {
               <div className="email">muditgupta68@gmail.com</div>
               <div className="phone">+91-9654238322</div>
             </div>
-            <div className="right">
+            {/* <div className="right">
               <div className="location">Banglore, IND</div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="background_card">
