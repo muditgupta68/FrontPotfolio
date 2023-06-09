@@ -43,6 +43,7 @@ const About = () => {
                 className="imageProfile shadow-up"
                 src={profileImg}
                 alt="Profile"
+                loading="lazy"
               />
             </div>
             <div className="contentBox">
