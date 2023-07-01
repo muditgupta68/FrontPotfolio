@@ -5,6 +5,7 @@ import email from "../images/email.png";
 import ContactCard from "./../components/ContactCard";
 import ContactForm from "../components/ContactForm";
 import Loading from "./Loading";
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,9 @@ const Contact = () => {
   return (
     <>
       <div className="basicTemplate">
+      <Helmet>
+        <title>Contact ME</title>
+      </Helmet>
         <div className="templateBox">
           <div className="heading">
             <h1>Contact</h1>

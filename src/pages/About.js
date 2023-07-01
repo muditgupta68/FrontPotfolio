@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import profileImg from "../images/about_profile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Helmet } from 'react-helmet';
 import {
   faCalendarDays,
   faMobileScreenButton,
@@ -12,6 +13,8 @@ import PerInfoCard from "../components/PerInfoCard";
 import AboutResume from "../components/aboutResume/AboutResume";
 import axios from "axios";
 import Loading from "./Loading";
+import BadgeCrousel from "../components/BadgeCrousel";
+import { Divider } from "antd";
 
 const About = () => {
   const [showResume, setResume] = useState(false);
@@ -34,6 +37,7 @@ const About = () => {
   const [education, setEducation] = useState([]);
   const [award, setAward] = useState([]);
   const [cert, setCert] = useState([]);
+  const [badge, setBadge] = useState([]);
 
   const fetchResumeApi = async () => {
     try {
@@ -57,6 +61,11 @@ const About = () => {
         return ed.tag === "Certification";
       });
       setCert(cert);
+
+      const badge = data.filter((ed) => {
+        return ed.tag === "Badge";
+      });
+      setBadge(badge);
     } catch (error) {
       setError(true);
     }
@@ -72,6 +81,9 @@ const About = () => {
 
   return (
     <div className="basicTemplate">
+      <Helmet>
+        <title>About ME</title>
+      </Helmet>
       <div className="templateBox">
         <div className="heading">
           <h1>about me</h1>
@@ -100,10 +112,9 @@ const About = () => {
                   that guides business growth.
                   <br></br>
                   <br></br>
-                  Let's connect to
-                  discuss how my analytical expertise can contribute to your
-                  organization's success and help drive data-driven
-                  decision-making.
+                  Let's connect to discuss how my analytical expertise can
+                  contribute to your organization's success and help drive
+                  data-driven decision-making.
                   <br></br>
                   <br></br>
                 </p>
@@ -168,6 +179,15 @@ const About = () => {
             cert={cert}
             isError={isError}
           />
+          {/* Skills Section */}
+          <div className="mt-5">
+            <Divider className="divider" style={{ color: "white" }}>
+              Badges
+            </Divider>
+            <div className="mt-5">
+              <BadgeCrousel badge={badge} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

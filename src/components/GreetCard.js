@@ -21,7 +21,7 @@ const GreetCard = () => {
               <img src={dp} alt="display picture" />
             </div>
             <p className="mt-2">Mudit Gupta</p>
-            <p>Analyst</p>
+            <p style={{color:"#838d96d4"}}>Data Analyst</p>
           </div>
           <div className="infos">
             <div>

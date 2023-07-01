@@ -5,6 +5,7 @@ import WorkCard from "../components/WorkCard";
 import { Pagination, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import Loading from "./Loading";
+import { Helmet } from "react-helmet";
 import Unavailable from "./../components/Unavailable";
 
 const { Option } = Select;
@@ -99,6 +100,9 @@ const Project = () => {
 
   return (
     <div className="basicTemplate">
+      <Helmet>
+        <title>My Projects</title>
+      </Helmet>
       <div className="templateBox">
         <div className="heading">
           <h1>Project</h1>

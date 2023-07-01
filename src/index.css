@@ -151,11 +151,16 @@ li.nav-item:hover {
   margin-bottom: 4rem !important;
 }
 
+.divider{
+  border-block-start-color:white !important;
+}
+
 .responsiveImage {
   background-size: cover;
   width: 70%;
   height: auto;
 }
+
 .center {
   display: block;
   margin: auto;
@@ -403,7 +408,6 @@ li.nav-item:hover {
   padding: 10px 3px !important;
 }
 
-
 .pagination {
   width: 100%;
   display: flex;
@@ -422,19 +426,19 @@ li.nav-item:hover {
   color: #393939 !important;
   font-weight: bold;
   border: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .goTo {
   font-weight: bold;
   background-color: rgb(5, 95, 5);
   border: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .return:hover {
   background-color: #fd7590 !important;
-  border:none;
+  border: none;
   translate: 0 -3px;
 }
 

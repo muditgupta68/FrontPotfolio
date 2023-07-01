@@ -114,9 +114,15 @@ button,
   padding: 5px 20px;
   text-transform: uppercase;
 }
+.reset-btn:hover,
+.reset-btn:focus {
+  background: #ec1c24;
+  outline: 0;
+  color: #eee;
+}
 .submit-btn:hover,
 .submit-btn:focus {
-  background: #ec1c24;
+  background: #0d4f31;
   outline: 0;
   color: #eee;
 }

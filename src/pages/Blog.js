@@ -4,6 +4,7 @@ import { Pagination } from "antd";
 import WorkCard from "../components/WorkCard";
 import Loading from "./Loading";
 import Unavailable from "../components/Unavailable";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const [blogData, setBlogs] = useState([]);
@@ -48,6 +49,9 @@ const Blog = () => {
 
   return (
     <div className="basicTemplate">
+      <Helmet>
+        <title>My Blogs</title>
+      </Helmet>
       <div className="templateBox">
         {isLoading ? (
           <Loading />
