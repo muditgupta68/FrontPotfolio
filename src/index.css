@@ -129,7 +129,8 @@ li.nav-item:hover {
   font-family: "Roboto", sans-serif;
 }
 .background {
-  background-image: url("../src/images/backgroundNew.jpg");
+  /* background-image: url("../src/images/backgroundNew.jpg"); */
+  background-image: url("../src/images/Animated_Shape.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -152,7 +153,7 @@ li.nav-item:hover {
 }
 
 .divider {
-  border-block-start-color: white !important;
+  border-block-start-color: #212425 !important;
 }
 
 .responsiveImage {
@@ -318,7 +319,13 @@ li.nav-item:hover {
 }
 
 .bg_badge{
-  background: #eaeaeae8;
+  background: #c8c8c8;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.bg_badge_cont{
+  background: #141414;
   padding: 20px;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -390,6 +397,34 @@ li.nav-item:hover {
   grid-column-gap: 15px;
 }
 
+.ant-tabs-tab {
+  color: #fff !important;
+}
+
+.ant-tabs-ink-bar {
+  /* background: none !important; */
+  background: #6ab5b9 !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #6ab5b9 !important;
+  font-weight: 500;
+}
+
+.capitalize{
+  text-transform: capitalize;
+  text-wrap: nowrap;
+}
+
+
+.skillSetContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 4px;
+  grid-auto-flow: row;
+  /* place-items: center; */
+}
+
 :where(.css-dev-only-do-not-override-k7429z).ant-pagination
   .ant-pagination-item-active {
   background-color: #111111 !important;
@@ -454,6 +489,20 @@ li.nav-item:hover {
   transition: all 0.2s ease;
 }
 
+.ant-progress-text{
+  color: white !important;
+}
+
+.progress_text {
+  margin-bottom: 0 !important;
+  font-size: 14px;
+  text-transform: capitalize;
+  /* color: #df4848; */
+  font-weight: bold;
+  text-shadow: 2px 1px #000;
+  text-decoration: overline;
+}
+
 .return:hover {
   background-color: #fd7590 !important;
   border: none;
@@ -480,14 +529,28 @@ li.nav-item:hover {
   filter: drop-shadow(3px 3px 4px #000);
 }
 
+/* .skillContainer{
+} */
+
+.left_panel,.right_panel{
+  grid-column: span 6 / span 6;
+}
+
 @media (max-width: 1000px) {
   .contentBox {
     grid-column: span 12 / span 12;
     margin-top: 30px;
     display: grid;
   }
+  .skillSetContainer{
+    grid-template-columns: repeat(4 , auto);
+  }
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .left_panel,.right_panel{
+    grid-column: span 12 / span 12;
+    margin-bottom: 2rem;
   }
   .grid-3 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -504,6 +567,11 @@ li.nav-item:hover {
     grid-column: span 12 / span 12;
   }
 }
+@media (max-width: 900px) {
+  .skillSetContainer{
+    grid-template-columns: repeat(3 , auto);
+  }
+}
 
 @media (max-width: 768px) {
   .imageProfile {
@@ -516,6 +584,11 @@ li.nav-item:hover {
     height: 100%;
     margin-bottom: 40px;
   }
+
+  .skillSetContainer{
+    grid-template-columns: repeat(2 , auto);
+  }
+  
   .parent {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -539,6 +612,16 @@ li.nav-item:hover {
   .data_val {
     font-size: 13px;
     font-weight: normal;
+  }
+  .skillSetContainer{
+    grid-template-columns: repeat(1 , 1fr);
+  }
+  .background{
+    padding: 0 !important;
+  }
+  .border_data{
+    width: 100% !important;
+    text-align: left !important;
   }
   .parent {
     grid-template-columns: repeat(1, 1fr);

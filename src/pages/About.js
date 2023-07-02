@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import profileImg from "../images/about_profile.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import {
   faCalendarDays,
   faMobileScreenButton,
@@ -15,6 +15,8 @@ import axios from "axios";
 import Loading from "./Loading";
 import BadgeCrousel from "../components/BadgeCrousel";
 import { Divider } from "antd";
+import ProgressBar from "../components/ProgressBar";
+import SkillBadge from "./../components/SkillBadge";
 
 const About = () => {
   const [showResume, setResume] = useState(false);
@@ -38,12 +40,23 @@ const About = () => {
   const [award, setAward] = useState([]);
   const [cert, setCert] = useState([]);
   const [badge, setBadge] = useState([]);
+  const [project, setProject] = useState({
+    "DS": 0,
+    "BI": 0,
+    "Web": 0,
+    "Analytics": 0,
+  });
 
   const fetchResumeApi = async () => {
     try {
       const apiCall = await axios.get(
         `https://odd-bass-yoke.cyclic.app/api/v1/about`
       );
+
+      const projectData = await axios.get(
+        `https://odd-bass-yoke.cyclic.app/api/v1/project`
+      );
+
       const data = apiCall?.data;
 
       const education = data.filter((ed) => {
@@ -66,6 +79,30 @@ const About = () => {
         return ed.tag === "Badge";
       });
       setBadge(badge);
+
+      // console.log(projectData.data.projects);
+
+      const DS = projectData.data.projects.filter((ed) => {
+        return ed.tag === "DS";
+      });
+      const BI = projectData.data.projects.filter((ed) => {
+        return ed.tag === "BI";
+      });
+      const web = projectData.data.projects.filter((ed) => {
+        return ed.tag === "Web";
+      });
+      const Analyst = projectData.data.projects.filter((ed) => {
+        return ed.tag === "Analyst";
+      });
+
+      // console.log(Analyst)
+
+      setProject({
+        "DS": DS.length/projectData.data.totalValues*100,
+        "BI": BI.length/projectData.data.totalValues*100,
+        "Web": web.length/projectData.data.totalValues*100,
+        "Analytics": Analyst.length/projectData.data.totalValues*100,
+      });
     } catch (error) {
       setError(true);
     }
@@ -184,8 +221,21 @@ const About = () => {
             <Divider className="divider" style={{ color: "white" }}>
               Badges
             </Divider>
-            <div className="bg_badge">
+            <div className="bg_badge_cont">
               <BadgeCrousel badge={badge} />
+            </div>
+          </div>
+          <div className="mt-5">
+            <Divider className="divider" style={{ color: "white" }}>
+              Skills
+            </Divider>
+            <div className="grid">
+              <div className="left_panel">
+                <ProgressBar project={project}/>
+              </div>
+              <div className="right_panel">
+                <SkillBadge />
+              </div>
             </div>
           </div>
         </div>

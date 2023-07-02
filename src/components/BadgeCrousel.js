@@ -37,7 +37,7 @@ const BadgeCrousel = ({ badge }) => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="mySwiper center"
+      className="mySwiper center p-4 bg_badge"
     >
       {badge &&
         badge?.map((data) => {
