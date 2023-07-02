@@ -33,7 +33,7 @@ const Blog = () => {
       }
 
       const totalData = Number(6 * apiCall?.data?.totalPages);
-      console.log(dataApi);
+      // console.log(dataApi);
       setTotal(totalData);
       setBlogs(dataApi);
       setIsLoading(false);
