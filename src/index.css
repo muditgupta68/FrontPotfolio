@@ -536,6 +536,17 @@ li.nav-item:hover {
   grid-column: span 6 / span 6;
 }
 
+.cardImage{
+  height: 16rem !important;
+}
+
+@media (max-width: 1100px) {
+  .parent{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 1000px) {
   .contentBox {
     grid-column: span 12 / span 12;
@@ -572,6 +583,15 @@ li.nav-item:hover {
     grid-template-columns: repeat(3 , auto);
   }
 }
+@media (max-width: 850px) {
+  .parent{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .cardImage{
+    height: auto !important;
+  }
+}
 
 @media (max-width: 768px) {
   .imageProfile {
@@ -589,10 +609,10 @@ li.nav-item:hover {
     grid-template-columns: repeat(2 , auto);
   }
   
-  .parent {
+  /* .parent {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-  }
+  } */
   .filter {
     width: 100% !important;
     font-size: 12px;

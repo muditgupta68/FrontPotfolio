@@ -36,7 +36,7 @@ const WorkCard = ({
       <Badge.Ribbon text={tag} color="#d8ae61s" className="ribbonFont">
         <Card
           style={{ width: "100%", margin: "50px 0px",background: 'rgb(255 244 222)' }}
-          cover={<img alt="work image" src={img} />}
+          cover={<img className="cardImage" alt="work image" src={img} />}
         >
           <Meta title={title} description={heading} />
           <Button
