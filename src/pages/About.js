@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import profileImg from "../images/about_profile.jpg";
+import profileImg from "../images/about_profile.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Helmet } from 'react-helmet';
 import {
@@ -184,7 +184,7 @@ const About = () => {
             <Divider className="divider" style={{ color: "white" }}>
               Badges
             </Divider>
-            <div className="mt-5">
+            <div className="bg_badge">
               <BadgeCrousel badge={badge} />
             </div>
           </div>

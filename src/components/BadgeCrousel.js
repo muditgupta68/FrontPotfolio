@@ -46,7 +46,7 @@ const BadgeCrousel = ({ badge }) => {
             <SwiperSlide key={data._id}>
               <a href={data.Completion} target="_blank">
                 <img
-                  className="responsiveImage"
+                  className="responsiveImage m_auto grow"
                   src={data.From}
                   alt="Badge Images"
                   border="0"
