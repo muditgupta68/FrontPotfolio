@@ -1,6 +1,5 @@
 import React from "react";
 import { Tabs } from "antd";
-import Industries from "./skillsets/Industries";
 import ToolPools from "./skillsets/ToolPools";
 import SkillSetsTags from "./skillsets/SkillSetsTags";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

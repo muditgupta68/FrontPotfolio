@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Badge, Button, Card, Space } from "antd";
+import { Badge, Button, Card } from "antd";
 import ModalComp from "./ModalComp";
 
 const { Meta } = Card;

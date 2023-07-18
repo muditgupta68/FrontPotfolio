@@ -34,11 +34,11 @@ const Blog = () => {
       }
 
       const TopData = dataApi.filter((data)=>{
-        return data.top==true
+        return data.top===true
       })
 
       const restData = dataApi.filter((data)=>{
-        return data.top!=true
+        return data.top!==true
       })
 
       const finalData = TopData.concat(restData);

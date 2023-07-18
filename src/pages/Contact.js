@@ -42,7 +42,7 @@ const Contact = () => {
     }
     const id = setInterval(timer, 1000);
     return () => clearInterval(id);
-  }, [currentCount]);
+  }, [currentCount,timer]);
 
   return (
     <>
