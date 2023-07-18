@@ -43,7 +43,7 @@ const Blog = () => {
 
       const finalData = TopData.concat(restData);
       
-      console.log(finalData)
+      // console.log(finalData)
 
       const totalData = Number(6 * apiCall?.data?.totalPages);
       // console.log(dataApi);

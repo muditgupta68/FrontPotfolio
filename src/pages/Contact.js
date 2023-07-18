@@ -60,7 +60,7 @@ const Contact = () => {
             <div className="d-flex marginT_5 contactContainer">
               <div className="leftPanel">
                 {cardDetail?.map((data) => {
-                  console.log(data);
+                  // console.log(data);
                   return (
                     <ContactCard
                       icon={data.icon}
