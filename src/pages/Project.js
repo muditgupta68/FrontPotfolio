@@ -7,6 +7,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import Loading from "./Loading";
 import { Helmet } from "react-helmet";
 import Unavailable from "./../components/Unavailable";
+import ScrollToTop from "../components/ScrollToTop";
 
 const { Option } = Select;
 
@@ -14,7 +15,7 @@ const Project = () => {
   const [projectData, setProjects] = useState([]);
   const [tagData, setTags] = useState([]);
   const [search, setSearch] = useState("");
-  const [toSearch, setToSearch] = useState("All");
+  const [toSearch, setToSearch] = useState("");
   const [currPage, setPage] = useState(1);
   const [totalData, setTotal] = useState(0);
 
@@ -38,9 +39,22 @@ const Project = () => {
         setLengthError(true);
       }
 
+      
+      const TopData = dataApi.filter((data)=>{
+        return data.top==true
+      })
+
+      const restData = dataApi.filter((data)=>{
+        return data.top!=true
+      })
+
+      const finalData = TopData.concat(restData);
+      
+      console.log(finalData)
+
       const totalData = Number(projectData?.data?.totalValues);
       setTotal(totalData);
-      setProjects(dataApi);
+      setProjects(finalData);
       setIsLoading(false);
 
       return projectData?.data?.projects;
@@ -114,8 +128,8 @@ const Project = () => {
               width: "30%",
             }}
             className="filter"
-            placeholder="Filter"
-            defaultValue={"All"}
+            placeholder="Select the tag"
+            // defaultValue={"All"}
             onChange={handleChangeValue}
             optionLabelProp="label"
           >
@@ -188,6 +202,7 @@ const Project = () => {
           <h1>Loading...</h1>
         )}
       </div>
+      <ScrollToTop />
     </div>
   );
 };

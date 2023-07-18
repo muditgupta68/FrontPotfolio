@@ -5,6 +5,7 @@ import WorkCard from "../components/WorkCard";
 import Loading from "./Loading";
 import Unavailable from "../components/Unavailable";
 import { Helmet } from "react-helmet";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Blog = () => {
   const [blogData, setBlogs] = useState([]);
@@ -32,10 +33,22 @@ const Blog = () => {
         setLengthError(true);
       }
 
+      const TopData = dataApi.filter((data)=>{
+        return data.top==true
+      })
+
+      const restData = dataApi.filter((data)=>{
+        return data.top!=true
+      })
+
+      const finalData = TopData.concat(restData);
+      
+      console.log(finalData)
+
       const totalData = Number(6 * apiCall?.data?.totalPages);
       // console.log(dataApi);
       setTotal(totalData);
-      setBlogs(dataApi);
+      setBlogs(finalData);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -104,6 +117,7 @@ const Blog = () => {
           <h1>Loading...</h1>
         )}
       </div>
+      <ScrollToTop />
     </div>
   );
 };

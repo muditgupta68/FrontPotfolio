@@ -6,6 +6,7 @@ import ContactCard from "./../components/ContactCard";
 import ContactForm from "../components/ContactForm";
 import Loading from "./Loading";
 import { Helmet } from 'react-helmet';
+import ScrollToTop from './../components/ScrollToTop';
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -76,6 +77,7 @@ const Contact = () => {
             </div>
           )}
         </div>
+        <ScrollToTop />
       </div>
     </>
   );

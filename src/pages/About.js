@@ -17,6 +17,7 @@ import BadgeCrousel from "../components/BadgeCrousel";
 import { Divider } from "antd";
 import ProgressBar from "../components/ProgressBar";
 import SkillBadge from "./../components/SkillBadge";
+import ScrollToTop from "../components/ScrollToTop";
 
 const About = () => {
   const [showResume, setResume] = useState(false);
@@ -78,7 +79,18 @@ const About = () => {
       const badge = data.filter((ed) => {
         return ed.tag === "Badge";
       });
-      setBadge(badge);
+
+      const TopBadge = badge.filter((data)=>{
+        return data.top==true
+      })
+
+      const restBadge = badge.filter((data)=>{
+        return data.top!=true
+      })
+
+      const finalBadge = TopBadge.concat(restBadge);
+
+      setBadge(finalBadge);
 
       // console.log(projectData.data.projects);
 
@@ -240,6 +252,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };
