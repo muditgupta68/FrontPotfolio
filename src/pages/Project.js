@@ -8,8 +8,10 @@ import Loading from "./Loading";
 import { Helmet } from "react-helmet";
 import Unavailable from "./../components/Unavailable";
 import ScrollToTop from "../components/ScrollToTop";
+import * as Scroll from "react-scroll";
 
 const { Option } = Select;
+let scroll = Scroll.animateScroll;
 
 const Project = () => {
   const [projectData, setProjects] = useState([]);
@@ -25,13 +27,14 @@ const Project = () => {
 
   const handlePage = (page) => {
     setPage(page);
+    scroll.scrollTo(130);
   };
 
   const fetchProjectData = async () => {
     try {
       setIsLoading(true);
       const projectData = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/project?page=${currPage}&search=${search}`
+        `https://odd-bass-yoke.cyclic.app/api/v1/project?search=${search}&size=${100}`
       );
       const dataApi = projectData?.data?.projects;
 
@@ -39,20 +42,29 @@ const Project = () => {
         setLengthError(true);
       }
 
-      
-      const TopData = dataApi.filter((data)=>{
-        return data.top===true
-      })
+      const TopData = dataApi.filter((data) => {
+        return data.top === true;
+      });
 
-      const restData = dataApi.filter((data)=>{
-        return data.top!==true
-      })
-      
+      const restData = dataApi.filter((data) => {
+        return data.top !== true;
+      });
+
       const finalData = TopData.concat(restData);
+
+      //changes
+
+      const Per_page = 6;
+      const offset = (currPage - 1) * Per_page;
+
+      const orderedData = finalData.slice(offset, offset + Per_page);
+      // const pageCount = Math.ceil(finalData.length / Per_page);
+      // console.log(orderedData)
 
       const totalData = Number(projectData?.data?.totalValues);
       setTotal(totalData);
-      setProjects(finalData);
+      setProjects(orderedData);
+
       setIsLoading(false);
 
       return projectData?.data?.projects;
@@ -67,6 +79,8 @@ const Project = () => {
       `https://odd-bass-yoke.cyclic.app/api/v1/project`
     );
     const dataApi = apiCall?.data?.projects;
+
+    // console.log(dataApi)
 
     const tags = dataApi?.map((data) => {
       return data?.tag;
@@ -142,7 +156,7 @@ const Project = () => {
               );
             })}
           </Select>
-          <div className="">
+          <div>
             <Button
               shape="rounded"
               icon={<SearchOutlined />}

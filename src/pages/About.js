@@ -55,7 +55,7 @@ const About = () => {
       );
 
       const projectData = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/project`
+        `https://odd-bass-yoke.cyclic.app/api/v1/project?size=${100}`
       );
 
       const data = apiCall?.data;
@@ -63,7 +63,7 @@ const About = () => {
       const education = data.filter((ed) => {
         return ed.tag === "Education";
       });
-
+      
       setEducation(education);
 
       const award = data.filter((ed) => {

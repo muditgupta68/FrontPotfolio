@@ -6,6 +6,9 @@ import Loading from "./Loading";
 import Unavailable from "../components/Unavailable";
 import { Helmet } from "react-helmet";
 import ScrollToTop from "../components/ScrollToTop";
+import * as Scroll from "react-scroll";
+
+let scroll = Scroll.animateScroll;
 
 const Blog = () => {
   const [blogData, setBlogs] = useState([]);
@@ -17,6 +20,7 @@ const Blog = () => {
   const [isLengthError, setLengthError] = useState(false);
 
   const handlePage = (page) => {
+    scroll.scrollTo(130);
     setPage(page);
   };
 
