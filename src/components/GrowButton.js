@@ -10,7 +10,7 @@ const GrowButton = () => {
   const fetchResumeApi = async () => {
     try {
       const apiCall = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/about`
+        `https://muditserver.netlify.app/.netlify/functions/api/v1/about`
       );
       const data = apiCall?.data;
 

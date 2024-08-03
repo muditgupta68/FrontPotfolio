@@ -51,11 +51,11 @@ const About = () => {
   const fetchResumeApi = async () => {
     try {
       const apiCall = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/about`
+        `https://muditserver.netlify.app/.netlify/functions/api/v1/about`
       );
 
       const projectData = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/project?size=${100}`
+        `https://muditserver.netlify.app/.netlify/functions/api/v1/project?size=${100}`
       );
 
       const data = apiCall?.data;

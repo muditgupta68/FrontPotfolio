@@ -34,7 +34,7 @@ const Project = () => {
     try {
       setIsLoading(true);
       const projectData = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/project?search=${search}&size=${100}`
+        `https://muditserver.netlify.app/.netlify/functions/api/v1/project?search=${search}&size=${100}`
       );
       const dataApi = projectData?.data?.projects;
 
@@ -76,7 +76,7 @@ const Project = () => {
 
   const fetchApiForTags = async () => {
     const apiCall = await axios.get(
-      `https://odd-bass-yoke.cyclic.app/api/v1/project`
+      `https://muditserver.netlify.app/.netlify/functions/api/v1/project`
     );
     const dataApi = apiCall?.data?.projects;
 

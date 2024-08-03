@@ -28,7 +28,7 @@ const Blog = () => {
     try {
       setIsLoading(true);
       const apiCall = await axios.get(
-        `https://odd-bass-yoke.cyclic.app/api/v1/blog?page=${currPage}`
+        `https://muditserver.netlify.app/.netlify/functions/api/v1/blog?page=${currPage}`
       );
 
       const dataApi = apiCall?.data?.projects;
