@@ -3,7 +3,7 @@ import React from "react";
 const VisitCard = () => {
   return (
     <div className="d-flex justify-content-center align-items-center">
-      <div className="business-card">
+      <div className="business-card visit_design_bg">
         <div className="content">
           <div className="top">
             <div className="name">Mudit Gupta</div>
@@ -21,6 +21,12 @@ const VisitCard = () => {
         </div>
         <div className="background_card">
           <div className="slice"></div>
+        </div>
+        <div className="background_card">
+          <div className="slice2"></div>
+        </div>
+        <div className="background_card">
+          <div className="slice3 visit_design_bg"></div>
         </div>
       </div>
     </div>

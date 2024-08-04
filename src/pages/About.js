@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import profileImg from "../images/about_profile.jpeg";
+import profileImg from "../images/about_profile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Helmet } from "react-helmet";
 import {
@@ -42,10 +42,10 @@ const About = () => {
   const [cert, setCert] = useState([]);
   const [badge, setBadge] = useState([]);
   const [project, setProject] = useState({
-    "DS": 0,
-    "BI": 0,
-    "Web": 0,
-    "Analytics": 0,
+    DS: 0,
+    BI: 0,
+    Web: 0,
+    Analytics: 0,
   });
 
   const fetchResumeApi = async () => {
@@ -63,7 +63,7 @@ const About = () => {
       const education = data.filter((ed) => {
         return ed.tag === "Education";
       });
-      
+
       setEducation(education);
 
       const award = data.filter((ed) => {
@@ -80,13 +80,13 @@ const About = () => {
         return ed.tag === "Badge";
       });
 
-      const TopBadge = badge.filter((data)=>{
-        return data.top==true
-      })
+      const TopBadge = badge.filter((data) => {
+        return data.top == true;
+      });
 
-      const restBadge = badge.filter((data)=>{
-        return data.top!=true
-      })
+      const restBadge = badge.filter((data) => {
+        return data.top != true;
+      });
 
       const finalBadge = TopBadge.concat(restBadge);
 
@@ -110,10 +110,10 @@ const About = () => {
       // console.log(Analyst)
 
       setProject({
-        "DS": DS.length/projectData.data.totalValues*100,
-        "BI": BI.length/projectData.data.totalValues*100,
-        "Web": web.length/projectData.data.totalValues*100,
-        "Analytics": Analyst.length/projectData.data.totalValues*100,
+        DS: (DS.length / projectData.data.totalValues) * 100,
+        BI: (BI.length / projectData.data.totalValues) * 100,
+        Web: (web.length / projectData.data.totalValues) * 100,
+        Analytics: (Analyst.length / projectData.data.totalValues) * 100,
       });
     } catch (error) {
       setError(true);
@@ -243,7 +243,7 @@ const About = () => {
             </Divider>
             <div className="grid">
               <div className="left_panel">
-                <ProgressBar project={project}/>
+                <ProgressBar project={project} />
               </div>
               <div className="right_panel">
                 <SkillBadge />

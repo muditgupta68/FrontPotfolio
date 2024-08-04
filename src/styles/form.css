@@ -4,7 +4,7 @@
   margin-right: auto;
   padding: 1em;
   border-radius: 10px;
-  background: transparent;
+  background: rgb(0 0 0 / 36%);
   border: 2px solid #212425;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }

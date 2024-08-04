@@ -27,12 +27,11 @@ const GreetCard = () => {
             <div>
               <div className="d-flex justify-content-end mr-4">
                 <a href="https://www.linkedin.com/in/mudit-gupta-303994192/" target="_blank">
-              <Button className="socialBtn" shape="round" icon={<LinkedinOutlined />} size='lg' />
+              <Button className="socialBtn" shape="round" icon={<LinkedinOutlined />} size='lg'/>
               </a>
               </div>
             </div>
             <div>
-              
             </div>
             <div>
               <div></div>

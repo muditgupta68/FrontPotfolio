@@ -1,8 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { HomeOutlined,UserOutlined,ExperimentOutlined,ContactsOutlined,GlobalOutlined } from "@ant-design/icons";
+import "../styles/hamburger.css";
+import {
+  HomeOutlined,
+  UserOutlined,
+  ExperimentOutlined,
+  ContactsOutlined,
+  GlobalOutlined,
+} from "@ant-design/icons";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const openNav = ()=>{
+    setIsNavOpen(!isNavOpen);
+  }
+
   return (
     <div>
       <nav className="navbar navBar navbar-expand-lg navbar-dark bg-dark justify-content-between p-4 pt-3">
@@ -10,17 +24,25 @@ const Navbar = () => {
           <a className="navbar-brand rotate_20" href="/">
             Mudit Gupta
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <div className>
+            <button
+              className="navbar-toggler navBtnStyle"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={openNav}
+            >
+              <div className={`hamburger hamburger--3dx ${isNavOpen?"is-active":""}`}>
+                <div className="hamburger-box">
+                  <div className="hamburger-inner"></div>
+                </div>
+              </div>
+              {/* <span className="navbar-toggler-icon"></span> */}
+            </button>
+          </div>
         </div>
         <div className="nav_right">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,7 +65,7 @@ const Navbar = () => {
                 activeclassname="active"
               >
                 <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
-                <UserOutlined />
+                  <UserOutlined />
                   <p className="mt-3 inherit">About</p>
                 </li>
               </NavLink>
@@ -54,7 +76,7 @@ const Navbar = () => {
                 activeclassname="active"
               >
                 <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
-                <ExperimentOutlined />
+                  <ExperimentOutlined />
                   <p className="mt-3 inherit">Project</p>
                 </li>
               </NavLink>
@@ -65,7 +87,7 @@ const Navbar = () => {
                 activeclassname="active"
               >
                 <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
-                <GlobalOutlined />
+                  <GlobalOutlined />
                   <p className="mt-3 inherit">Blogs</p>
                 </li>
               </NavLink>
@@ -76,7 +98,7 @@ const Navbar = () => {
                 activeclassname="active"
               >
                 <li className="nav-item m-2 d-flex justify-content-center align-items-center gap-1">
-                <ContactsOutlined />
+                  <ContactsOutlined />
                   <p className="mt-3 inherit">Contact</p>
                 </li>
               </NavLink>

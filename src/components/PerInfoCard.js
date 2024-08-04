@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/componentStyle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PerInfoCard = ({ icon, infoHead, data,color }) => {

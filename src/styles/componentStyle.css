@@ -92,7 +92,9 @@ body {
 
 .business2 .red {
   height: 35%;
-  background-image: url("../images/card_top.png");
+  /* background-image: url("../images/card_top.png"); */
+  background-image: url("../images/TopBG.svg");
+  background-size: cover;
 }
 
 .business2 .head {
@@ -136,6 +138,7 @@ body {
 
 .business2 .img img {
   width: 100%;
+  filter: drop-shadow(2px 4px 6px black);
   padding: 10px 0;
   border-radius: 50%;
   height: auto;
@@ -174,9 +177,9 @@ body {
   color: #d7aa56 !important;
   border: none !important;
   transition: all 0.2s ease-in;
-  -webkit-box-shadow: -12px 14px 17px -12px rgba(0, 0, 0, 0.81);
+  /* -webkit-box-shadow: -12px 14px 17px -12px rgba(0, 0, 0, 0.81);
   -moz-box-shadow: -12px 14px 17px -12px rgba(0, 0, 0, 0.81);
-  box-shadow: -12px 14px 17px -12px rgba(0, 0, 0, 0.81);
+  box-shadow: -12px 14px 17px -12px rgba(0, 0, 0, 0.81); */
 }
 
 .socialBtn:hover {
@@ -373,15 +376,16 @@ body {
 
 .background_card {
   z-index: 1;
-  background-color: #ffffff;
+  /* background-image: url("../images/.png"); */
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px;
   bottom: 0;
   right: 0;
 }
 
 .slice {
+  background-size: cover;
   top: -59vmin;
   left: -1vmin;
   position: absolute;
@@ -395,6 +399,33 @@ body {
   animation: inRotate;
   animation-duration: 1s;
   background-image: url("../images/businessCardBg.png");
+}
+.slice2 {
+  top: 13vmin;
+  left: 60vmin;
+  position: absolute;
+  width: 90vmin;
+  height: 150vmin;
+  transform: rotate(38deg);
+  animation: inRotate;
+  animation-duration: 1s;
+  background-image: url("../images/businessCardBg.png");
+}
+.slice3 {
+  top: 13vmin;
+  left: 62vmin;
+  position: absolute;
+  width: 90vmin;
+  height: 150vmin;
+  transform: rotate(38deg);
+  animation: inRotate;
+  animation-duration: 1s;
+}
+
+.visit_design_bg {
+  /* background-color: #2f4f4f !important; */
+  background-size: contain;
+  background-image: url("../images/secondaryBG.png");
 }
 
 @keyframes inRotate {
@@ -427,9 +458,21 @@ body {
   }
 }
 
+.ant-spin-dot-item {
+  background-color: rgb(216, 174, 97) !important;
+}
+
 html {
   height: 100%;
 }
+
+@media (max-width: 1283px) {
+  .data {
+    width: 10rem;
+    word-wrap: break-word;
+  }
+}
+
 @media (max-width: 1000px) {
   .greetBox {
     flex-direction: column;
@@ -437,5 +480,20 @@ html {
   }
   .greetCard {
     display: none;
+  }
+  .slice {
+    left: -5vmin !important;
+  }
+  .slice2 {
+    left: 56vmin;
+  }
+  .slice3 {
+    left: 58vmin;
+  }
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 36px;
+    height: 3px;
   }
 }

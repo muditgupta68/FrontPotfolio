@@ -1,5 +1,6 @@
 import React from 'react'
 import { Spin } from 'antd';
+import "../styles/componentStyle.css";
 const Loading = () => {
   return (
     <>
